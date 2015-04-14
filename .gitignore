@@ -1,0 +1,11 @@
+**/target/**
+target/**
+.classpath
+.project
+.settings/**
+**/bin/**
+**/.pydevproject
+*.pyc
+.DS_Store
+pom.xml.versionsBackup
+
