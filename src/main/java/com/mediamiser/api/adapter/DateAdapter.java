@@ -1,5 +1,5 @@
 // Copyright (c) 2014 MediaMiser Ltd. All rights reserved.
-package com.mediamiser.puller.model;
+package com.mediamiser.api.adapter;
 
 import java.util.Calendar;
 import java.util.Date;

@@ -1,11 +1,15 @@
-**/target/**
-target/**
+target
 .classpath
 .project
 .settings/**
-**/bin/**
+bin
 **/.pydevproject
 *.pyc
 .DS_Store
 pom.xml.versionsBackup
 
+## IntelliJ IDEA
+.idea/*
+*.iml
+*.ipr
+*.iws

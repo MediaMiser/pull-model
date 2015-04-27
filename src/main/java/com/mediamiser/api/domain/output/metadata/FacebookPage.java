@@ -1,5 +1,5 @@
 // Copyright (c) 2015 MediaMiser Ltd. All rights reserved.
-package com.mediamiser.puller.model;
+package com.mediamiser.api.domain.output.metadata;
 
 import java.util.Objects;
 
@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+import com.mediamiser.api.domain.AbstractDomain;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**

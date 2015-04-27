@@ -1,5 +1,5 @@
 // Copyright (c) 2015 MediaMiser Ltd. All rights reserved.
-package com.mediamiser.puller.model;
+package com.mediamiser.api.domain.input;
 
 import java.util.Date;
 import java.util.Objects;
@@ -14,8 +14,9 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.google.common.collect.Sets;
+import com.mediamiser.api.adapter.DateAdapter;
+import com.mediamiser.api.domain.AbstractDomain;
 import com.wordnik.swagger.annotations.ApiModelProperty;
-
 import cz.jirutka.validator.collection.constraints.EachSize;
 
 /**
@@ -27,7 +28,7 @@ import cz.jirutka.validator.collection.constraints.EachSize;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(
 		name = "")
-public class Spout extends AbstractDomain {
+public class SpoutRequest extends AbstractDomain {
 
 	@NotNull
 	@Size(
@@ -52,24 +53,11 @@ public class Spout extends AbstractDomain {
 			value = DateAdapter.DOCUMENTATION_DATETIME)
 	protected Date					endTime;
 
-	@NotNull
-	@ApiModelProperty(
-			required = false)
-	protected SpoutStatus			status;
-
-	@NotNull
-	@ApiModelProperty(
-			required = false)
-	@Size(
-			min = 1,
-			max = 10)
-	protected Set<SpoutObjectType>	objectTypes		= Sets.newHashSet();
-
 	public Set<String> monitoringIds() {
 		return monitoringIds;
 	}
 
-	public Spout monitoringIds(final Set<String> monitoringIds) {
+	public SpoutRequest monitoringIds(final Set<String> monitoringIds) {
 		this.monitoringIds = monitoringIds;
 		return this;
 	}
@@ -78,7 +66,7 @@ public class Spout extends AbstractDomain {
 		return startTime;
 	}
 
-	public Spout startTime(final Date startTime) {
+	public SpoutRequest startTime(final Date startTime) {
 		this.startTime = startTime;
 		return this;
 	}
@@ -87,26 +75,8 @@ public class Spout extends AbstractDomain {
 		return endTime;
 	}
 
-	public Spout endTime(final Date endTime) {
+	public SpoutRequest endTime(final Date endTime) {
 		this.endTime = endTime;
-		return this;
-	}
-
-	public SpoutStatus status() {
-		return status;
-	}
-
-	public Spout status(final SpoutStatus status) {
-		this.status = status;
-		return this;
-	}
-
-	public Set<SpoutObjectType> objectTypes() {
-		return objectTypes;
-	}
-
-	public Spout objectTypes(final Set<SpoutObjectType> objectTypes) {
-		this.objectTypes = objectTypes;
 		return this;
 	}
 
@@ -116,17 +86,16 @@ public class Spout extends AbstractDomain {
 
 		if (this == object) {
 			equals = true;
-		} else if (object instanceof Spout) {
-			final Spout other = (Spout) object;
+		} else if (object instanceof SpoutRequest) {
+			final SpoutRequest other = (SpoutRequest) object;
 			equals = Objects.equals(monitoringIds, other.monitoringIds) && Objects.equals(startTime, other.startTime)
-					&& Objects.equals(endTime, other.endTime) && Objects.equals(status, other.status)
-					&& Objects.equals(objectTypes, other.objectTypes);
+					&& Objects.equals(endTime, other.endTime);
 		}
 		return equals;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(monitoringIds, startTime, endTime, status, objectTypes);
+		return Objects.hash(monitoringIds, startTime, endTime);
 	}
 }

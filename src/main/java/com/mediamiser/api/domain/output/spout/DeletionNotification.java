@@ -1,20 +1,24 @@
 // Copyright (c) 2015 MediaMiser Ltd. All rights reserved.
-package com.mediamiser.puller.model;
+package com.mediamiser.api.domain.output.spout;
 
 import java.util.Date;
 import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import com.mediamiser.api.adapter.DateAdapter;
+import com.mediamiser.api.domain.AbstractDomain;
+import com.mediamiser.api.domain.enumeration.MetaDataMediaType;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**
- * A notification that a spout's state has changed.
+ * A notification that a monitored media type was deleted.
  * 
  * @author Samer Al-Buhaisi <samer.albuhaisi@mediamiser.com>
  */
@@ -22,40 +26,43 @@ import com.wordnik.swagger.annotations.ApiModelProperty;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(
 		name = "")
-public class StateChangeNotification extends AbstractDomain {
+public class DeletionNotification extends AbstractDomain {
+
+	@NotNull
+	@Size(
+			min = 1,
+			max = 60)
+	@ApiModelProperty(
+			required = true)
+	protected String			mediaId;
 
 	@NotNull
 	@ApiModelProperty(
 			required = true)
-	protected SpoutStatus	status;
-
-	@NotNull
-	@ApiModelProperty(
-			required = true)
-	protected SpoutReason	reason;
+	protected MetaDataMediaType	mediaType;
 
 	@NotNull
 	@XmlJavaTypeAdapter(DateAdapter.class)
 	@ApiModelProperty(
 			required = true,
 			value = DateAdapter.DOCUMENTATION_DATETIME)
-	protected Date			timestamp;
+	protected Date				timestamp;
 
-	public SpoutStatus status() {
-		return status;
+	public String mediaId() {
+		return mediaId;
 	}
 
-	public StateChangeNotification status(final SpoutStatus status) {
-		this.status = status;
+	public DeletionNotification mediaId(final String mediaId) {
+		this.mediaId = mediaId;
 		return this;
 	}
 
-	public SpoutReason reason() {
-		return reason;
+	public MetaDataMediaType mediaType() {
+		return mediaType;
 	}
 
-	public StateChangeNotification reason(final SpoutReason reason) {
-		this.reason = reason;
+	public DeletionNotification mediaType(final MetaDataMediaType mediaType) {
+		this.mediaType = mediaType;
 		return this;
 	}
 
@@ -63,7 +70,7 @@ public class StateChangeNotification extends AbstractDomain {
 		return timestamp;
 	}
 
-	public StateChangeNotification timestamp(final Date timestamp) {
+	public DeletionNotification timestamp(final Date timestamp) {
 		this.timestamp = timestamp;
 		return this;
 	}
@@ -74,10 +81,10 @@ public class StateChangeNotification extends AbstractDomain {
 
 		if (this == object) {
 			equals = true;
-		} else if (object instanceof StateChangeNotification) {
-			final StateChangeNotification other = (StateChangeNotification) object;
-			equals = Objects.equals(status, other.status)
-					&& Objects.equals(reason, other.reason) && Objects.equals(timestamp, other.timestamp);
+		} else if (object instanceof DeletionNotification) {
+			final DeletionNotification other = (DeletionNotification) object;
+			equals = Objects.equals(mediaId, other.mediaId) && Objects.equals(mediaType, other.mediaType)
+					&& Objects.equals(timestamp, other.timestamp);
 		}
 
 		return equals;
@@ -85,6 +92,6 @@ public class StateChangeNotification extends AbstractDomain {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(status, reason, timestamp);
+		return Objects.hash(mediaId, mediaType, timestamp);
 	}
 }

@@ -1,5 +1,5 @@
 // Copyright (c) 2015 MediaMiser Ltd. All rights reserved.
-package com.mediamiser.puller.model;
+package com.mediamiser.api.domain.enumeration;
 
 /**
  * Objects supported by a spout.

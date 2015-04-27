@@ -1,5 +1,5 @@
 // Copyright (c) 2014 MediaMiser Ltd. All rights reserved.
-package com.mediamiser.puller.model;
+package com.mediamiser.api.domain;
 
 import javax.validation.constraints.Null;
 import javax.xml.bind.annotation.XmlAccessType;

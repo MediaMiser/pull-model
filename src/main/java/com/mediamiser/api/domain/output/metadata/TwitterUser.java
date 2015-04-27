@@ -1,5 +1,5 @@
 // Copyright (c) 2015 MediaMiser Ltd. All rights reserved.
-package com.mediamiser.puller.model;
+package com.mediamiser.api.domain.output.metadata;
 
 import java.util.Date;
 import java.util.Locale;
@@ -12,6 +12,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import com.mediamiser.api.adapter.DateAdapter;
+import com.mediamiser.api.adapter.LocaleAdapter;
+import com.mediamiser.api.domain.AbstractDomain;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**

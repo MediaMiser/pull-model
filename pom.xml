@@ -40,30 +40,44 @@
 		<repository-url>http://maven.mediamiser.internal:8080/repository/mercury/</repository-url>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>mercury</id>
-			<url>http://maven.mediamiser.internal:8080/repository/mercury/</url>
-			<layout>default</layout>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>true</uniqueVersion>
+            <id>mercury</id>
+            <name>Mercury repository</name>
+            <url>${repository-url}</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>true</uniqueVersion>
+            <id>mercury</id>
+            <name>Mercury repository</name>
+            <url>${repository-url}</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>mercury</id>
-			<url>${repository-url}</url>
-		</pluginRepository>
-	</pluginRepositories>
+    <repositories>
+        <repository>
+            <id>mercury</id>
+            <url>${repository-url}</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
-	<distributionManagement>
-		<site>
-			<id>internal.repository</id>
-			<url>${documentation-site.url}</url>
-		</site>
-	</distributionManagement>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>mercury</id>
+            <url>${repository-url}</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <prerequisites>
+        <maven>3.0</maven>
+    </prerequisites>
 
 	<dependencies>
 
@@ -156,6 +170,21 @@
 			<version>${jersey.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>cpsuite</groupId>
+			<artifactId>cpsuite</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+   			<groupId>javax.el</groupId>
+   			<artifactId>javax.el-api</artifactId>
+   			<version>2.2.4</version>
+			<scope>test</scope>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -249,6 +278,28 @@
 
 		</plugins>
 	</build>
+
+    <licenses>
+        <license>
+            <name>Proprietary</name>
+            <url>http://en.wikipedia.org/wiki/Proprietary_software</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://gitolite@git.mediamiser.internal:/mercury.git</connection>
+        <url>http://git.mediamiser.internal/mercury.git/</url>
+    </scm>
+
+    <issueManagement>
+        <system>Phabricator</system>
+        <url>http://phabricator.mediamiser.internal/project/view/1/</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>http://jenkinsmaster.mediamiser.internal:8080/</url>
+    </ciManagement>
 
 	<developers>
 		<developer>
