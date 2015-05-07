@@ -9,7 +9,7 @@ See [the library's API documentation](http://mediamiser.github.io/pull-model/api
 
 
 ### Usage
-You can include this project in your own by adding the following dependency to your project's `pom.xml` file under the <a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Scope">test scope</a>:
+You can include this project in your own by adding the following dependency to your project's `pom.xml` file:
 
 ```
 <dependency>
