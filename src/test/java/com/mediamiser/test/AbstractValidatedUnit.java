@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2014 MediaMiser Ltd. All rights reserved.
+// Copyright (c) 2012-2015 MediaMiser Ltd. All rights reserved.
 package com.mediamiser.test;
 
 import javax.validation.Validation;

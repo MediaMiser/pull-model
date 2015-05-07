@@ -1,4 +1,4 @@
-// Copyright (c) 2014 MediaMiser Ltd. All rights reserved.
+// Copyright (c) 2014-2015 MediaMiser Ltd. All rights reserved.
 package com.mediamiser.api.domain;
 
 import javax.validation.constraints.Null;
@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**
- * Common methods that all domain objects should have.
+ * Common methods/properties for all domain objects.
  * 
  * @author Chris Fournier <chris.fournier@mediamiser.com>
  */
@@ -25,9 +25,11 @@ import com.wordnik.swagger.annotations.ApiModelProperty;
 		name = "")
 public abstract class AbstractDomain {
 
-	// This is a catch all field used to ensure no unrecognized fields are
-	// accepted. This field must always be null. Any extra fields will be
-	// un-marshaled into this field, causing a validation error.
+	/**
+	 * This is a catch all field used to ensure no unrecognized fields are
+	 * accepted. This field must always be null. Any extra fields will be
+	 * unmarshaled into this field, causing a validation error.
+	 */
 	@Null(
 			message = "unrecognized field")
 	@XmlAnyElement()
@@ -35,8 +37,10 @@ public abstract class AbstractDomain {
 			hidden = true)
 	public Object[]	unknown;
 
-	// To aid debugging, this method summarizes a domain object's contents in
-	// logs and in a debugger
+	/**
+	 * To aid debugging, this method summarizes a domain object's contents in
+	 * logs and in a debugger.
+	 */
 	@XmlTransient
 	@Override
 	public String toString() {

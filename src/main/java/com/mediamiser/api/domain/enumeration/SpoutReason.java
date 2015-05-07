@@ -10,7 +10,7 @@ public enum SpoutReason {
 	RATE_LIMITED,
 	NO_CONTENT;
 
-	// These are used by annotations, which require string/int constants
+	// Constants that are needed for in documentation/constraint-related annotations
 	public static final String	VALUES	= "RATE_LIMITED,NO_CONTENT";
 	public static final int		SIZE	= 2;
 }

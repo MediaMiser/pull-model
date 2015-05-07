@@ -7,7 +7,7 @@ import java.util.Set;
 
 import javax.validation.ConstraintViolation;
 
-import jersey.repackaged.com.google.common.collect.Sets;
+import com.google.common.collect.Sets;
 
 import org.junit.Assert;
 import org.junit.Test;

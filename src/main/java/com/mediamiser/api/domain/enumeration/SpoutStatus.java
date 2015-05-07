@@ -11,7 +11,7 @@ public enum SpoutStatus {
 	STOPPED,
 	IN_PRORGESS;
 
-	// These are used by annotations, which require string/int constants
+	// Constants that are needed for in documentation/constraint-related annotations
 	public static final String	VALUES	= "COMPLETE,STOPPED,IN_PRORGESS";
 	public static final int		SIZE	= 3;
 }

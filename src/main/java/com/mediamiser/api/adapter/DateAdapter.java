@@ -1,4 +1,4 @@
-// Copyright (c) 2014 MediaMiser Ltd. All rights reserved.
+// Copyright (c) 2014-2015 MediaMiser Ltd. All rights reserved.
 package com.mediamiser.api.adapter;
 
 import java.util.Calendar;
@@ -11,8 +11,8 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * This adapter allows for java.util.Date objects to be marshalled/unmarshalled
- * to and from RFC 3339 timestamps (https://tools.ietf.org/html/rfc3339).
+ * This adapter allows for {@link java.util.Date} objects to be marshalled/unmarshalled
+ * to and from <a href="https://tools.ietf.org/html/rfc3339">RFC 3339 timestamps</a>.
  * 
  * @author Chris Fournier <chris.fournier@mediamiser.com>
  */

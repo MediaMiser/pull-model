@@ -1,4 +1,4 @@
-// Copyright (c) 2014 MediaMiser Ltd. All rights reserved.
+// Copyright (c) 2014-2015 MediaMiser Ltd. All rights reserved.
 package com.mediamiser.api.domain;
 
 import org.junit.Assert;

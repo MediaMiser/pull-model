@@ -12,11 +12,12 @@ public enum SpoutObjectType {
 	STATE_CHANGE_NOTIFICATION,
 	DELETION_NOTIFICATION;
 
-	// These are used by annotations, which require string/int constants
+	// Constants that are needed for in documentation/constraint-related annotations
 	public static final String	TWITTER_USER_VALUE = "TWITTER_USER";
 	public static final String	FACEBOOK_PAGE_VALUE = "FACEBOOK_PAGE";
 	public static final String	STATE_CHANGE_NOTIFICATION_VALUE = "STATE_CHANGE_NOTIFICATION";
 	public static final String	DELETION_NOTIFICATION_VALUE = "DELETION_NOTIFICATION";
+	
 	public static final String	VALUES	= TWITTER_USER_VALUE + "," + FACEBOOK_PAGE_VALUE + "," + STATE_CHANGE_NOTIFICATION_VALUE + "," + DELETION_NOTIFICATION_VALUE;
 	public static final int		SIZE	= 4;
 }

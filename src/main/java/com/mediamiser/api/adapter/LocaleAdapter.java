@@ -1,4 +1,4 @@
-// Copyright (c) 2014 MediaMiser Ltd. All rights reserved.
+// Copyright (c) 2014-2015 MediaMiser Ltd. All rights reserved.
 package com.mediamiser.api.adapter;
 
 import java.util.Locale;
@@ -15,9 +15,9 @@ import com.google.common.collect.Sets;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * This adapter allows for java.util.Locale objects to be
- * marshalled/unmarshalled to and from BCP 47 tags
- * (http://tools.ietf.org/html/bcp47).
+ * This adapter allows for {@link java.util.Locale} objects to be
+ * marshalled/unmarshalled to and from
+ * <a href="http://tools.ietf.org/html/bcp47">BCP 47 tags</a>.
  * 
  * @author Chris Fournier <chris.fournier@mediamiser.com>
  */
