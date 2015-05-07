@@ -1,0 +1,8 @@
+com.mediamiser.api
+com.mediamiser.api.adapter
+com.mediamiser.api.domain
+com.mediamiser.api.domain.enumeration
+com.mediamiser.api.domain.input
+com.mediamiser.api.domain.output
+com.mediamiser.api.domain.output.metadata
+com.mediamiser.api.domain.output.spout
