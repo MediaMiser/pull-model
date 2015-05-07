@@ -22,6 +22,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
     <central.repository-url>https://repo1.maven.org/maven2</central.repository-url>
+    <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssXXX</maven.build.timestamp.format>
 
     <!-- Dependencies -->
     <slf4j.version>1.7.7</slf4j.version>
