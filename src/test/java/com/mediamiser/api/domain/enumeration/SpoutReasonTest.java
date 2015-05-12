@@ -21,6 +21,6 @@ public class SpoutReasonTest {
 
 		// Cover these functions
 		Assert.assertTrue(SpoutReason.values().length > 0);
-		Assert.assertEquals(SpoutReason.RATE_LIMITED, SpoutReason.valueOf(SpoutReason.RATE_LIMITED.toString()));
+		Assert.assertEquals(SpoutReason.FINISHED, SpoutReason.valueOf(SpoutReason.FINISHED.toString()));
 	}
 }

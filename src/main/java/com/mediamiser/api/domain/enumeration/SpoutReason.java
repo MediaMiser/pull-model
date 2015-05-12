@@ -7,10 +7,10 @@ package com.mediamiser.api.domain.enumeration;
  * @author Samer Al-Buhaisi <samer.albuhaisi@mediamiser.com>
  */
 public enum SpoutReason {
-	RATE_LIMITED,
+	FINISHED,
 	NO_CONTENT;
 
 	// Constants that are needed for in documentation/constraint-related annotations
-	public static final String	VALUES	= "RATE_LIMITED,NO_CONTENT";
+	public static final String	VALUES	= "FINISHED,NO_CONTENT";
 	public static final int		SIZE	= 2;
 }

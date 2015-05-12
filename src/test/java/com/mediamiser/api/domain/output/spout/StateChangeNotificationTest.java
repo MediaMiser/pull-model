@@ -59,14 +59,14 @@ public class StateChangeNotificationTest extends AbstractValidatedUnit {
 				new StateChangeNotification().status(EXPECTED_SPOUT_STATUS));
 		Assert.assertNotEquals(
 				new StateChangeNotification().status(EXPECTED_SPOUT_STATUS),
-				new StateChangeNotification().status(SpoutStatus.IN_PRORGESS));
+				new StateChangeNotification().status(SpoutStatus.IN_PROGRESS));
 
 		Assert.assertEquals(
 				new StateChangeNotification().reason(EXPECTED_SPOUT_REASON),
 				new StateChangeNotification().reason(EXPECTED_SPOUT_REASON));
 		Assert.assertNotEquals(
 				new StateChangeNotification().reason(EXPECTED_SPOUT_REASON),
-				new StateChangeNotification().reason(SpoutReason.RATE_LIMITED));
+				new StateChangeNotification().reason(SpoutReason.FINISHED));
 
 		Assert.assertEquals(
 				new StateChangeNotification().timestamp(EXPECTED_STATE_CHANGE_TIMESTAMP),

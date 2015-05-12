@@ -21,7 +21,7 @@ public class SpoutTest extends AbstractValidatedUnit {
 	public static final Set<String>				EXPECTED_MONITORING_IDS	= Sets.newHashSet("someid");
 	public static final Date					EXPECTED_START_TIME		= new Date(0);
 	public static final Date					EXPECTED_END_TIME		= null;
-	public static final SpoutStatus				EXPECTED_STATUS			= SpoutStatus.IN_PRORGESS;
+	public static final SpoutStatus				EXPECTED_STATUS			= SpoutStatus.IN_PROGRESS;
 	public static final Set<SpoutObjectType>	EXPECTED_OBJECT_TYPES	= Sets
 																			.newHashSet(
 																					SpoutObjectType.TWITTER_USER,

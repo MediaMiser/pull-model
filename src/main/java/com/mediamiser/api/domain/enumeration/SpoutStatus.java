@@ -9,9 +9,9 @@ package com.mediamiser.api.domain.enumeration;
 public enum SpoutStatus {
 	COMPLETE,
 	STOPPED,
-	IN_PRORGESS;
+	IN_PROGRESS;
 
 	// Constants that are needed for in documentation/constraint-related annotations
-	public static final String	VALUES	= "COMPLETE,STOPPED,IN_PRORGESS";
+	public static final String	VALUES	= "COMPLETE,STOPPED,IN_PROGRESS";
 	public static final int		SIZE	= 3;
 }
