@@ -1,484 +1,523 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.mediamiser</groupId>
-  <artifactId>pull-model</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <groupId>com.mediamiser</groupId>
+    <artifactId>pull-model</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-  <name>MediaMiser RESTful Pull API Models</name>
-  <description>
-    Domain model objects and adapters for MediaMiser's RESTful APIs that provide pull-based streaming data.
-  </description>
-  <url>https://github.com/MediaMiser/pull-model/</url>
-  <inceptionYear>2015</inceptionYear>
+    <name>MediaMiser RESTful Pull API Models</name>
+    <description>
+        Domain model objects and adapters for MediaMiser's RESTful APIs that provide pull-based streaming data.
+    </description>
+    <url>https://github.com/MediaMiser/pull-model/</url>
+    <inceptionYear>2015</inceptionYear>
 
-  <properties>
+    <properties>
 
-    <!-- Build -->
-    <targetJdk>1.7</targetJdk>
-    <java.version>1.7</java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
-    <central.repository-url>https://repo1.maven.org/maven2</central.repository-url>
-    <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssXXX</maven.build.timestamp.format>
+        <!-- Build -->
+        <targetJdk>1.7</targetJdk>
+        <java.version>1.7</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+        <central.repository-url>https://repo1.maven.org/maven2</central.repository-url>
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssXXX</maven.build.timestamp.format>
 
-    <!-- Dependencies -->
-    <slf4j.version>1.7.7</slf4j.version>
-    <apache-log4j.version>1.2.17</apache-log4j.version>
-    <jersey.version>2.6</jersey.version>
-    <swagger.version>1.3.5</swagger.version>
-    <jirutka-validator.version>2.1.3</jirutka-validator.version>
-    <guava.version>14.0.1</guava.version>
-    <validation-api.version>1.1.0.Final</validation-api.version>
-    <commons-lang3.version>3.1</commons-lang3.version>
+        <!-- Dependencies -->
+        <slf4j.version>1.7.7</slf4j.version>
+        <apache-log4j.version>1.2.17</apache-log4j.version>
+        <jersey.version>2.6</jersey.version>
+        <swagger.version>1.3.5</swagger.version>
+        <jirutka-validator.version>2.1.3</jirutka-validator.version>
+        <guava.version>14.0.1</guava.version>
+        <validation-api.version>1.1.0.Final</validation-api.version>
+        <commons-lang3.version>3.1</commons-lang3.version>
 
-    <!-- Testing -->
-    <junit.version>4.12</junit.version>
-    <cpsuite.version>1.2.7</cpsuite.version>
-    <mediamiser-avogadro.version>1.0.3</mediamiser-avogadro.version>
-    <javax.el-api.version>2.2.4</javax.el-api.version>
+        <!-- Testing -->
+        <junit.version>4.12</junit.version>
+        <cpsuite.version>1.2.7</cpsuite.version>
+        <mediamiser-avogadro.version>1.0.3</mediamiser-avogadro.version>
+        <javax.el-api.version>2.2.4</javax.el-api.version>
 
-    <!-- Plugins -->
-    <maven-source-plugin.version>2.2</maven-source-plugin.version>
-    <maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
-    <surefire-maven-plugin.version>2.16</surefire-maven-plugin.version>
-    <jacoco-maven-plugin.version>0.7.2.201409121644</jacoco-maven-plugin.version>
-    <lint-maven-plugin.version>0.0.8</lint-maven-plugin.version>
-    <jar-maven-plugin.version>2.4</jar-maven-plugin.version>
-    <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
-    <coveralls-maven-plugin.version>2.2.0</coveralls-maven-plugin.version>
-    <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
-    <maven-jgit-buildnumber-plugin.version>1.2.7</maven-jgit-buildnumber-plugin.version>
-    <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
-    <nexus-staging-maven-plugin.version>1.6.3</nexus-staging-maven-plugin.version>
-    <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
-    <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
+        <!-- Plugins -->
+        <maven-source-plugin.version>2.2</maven-source-plugin.version>
+        <maven-compiler-plugin.version>2.5.1</maven-compiler-plugin.version>
+        <surefire-maven-plugin.version>2.16</surefire-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.7.2.201409121644</jacoco-maven-plugin.version>
+        <lint-maven-plugin.version>0.0.8</lint-maven-plugin.version>
+        <jar-maven-plugin.version>2.4</jar-maven-plugin.version>
+        <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
+        <coveralls-maven-plugin.version>2.2.0</coveralls-maven-plugin.version>
+        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+        <maven-jgit-buildnumber-plugin.version>1.2.7</maven-jgit-buildnumber-plugin.version>
+        <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.3</nexus-staging-maven-plugin.version>
+        <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
+        <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
 
-  </properties>
+    </properties>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-    
-  <repositories>
-    <repository>
-      <id>central</id>
-      <url>${central.repository-url}</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>${central.repository-url}</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>central</id>
-      <url>${central.repository-url}</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>${central.repository-url}</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
-  <prerequisites>
-    <maven>3.0</maven>
-  </prerequisites>
+    <prerequisites>
+        <maven>3.0</maven>
+    </prerequisites>
 
-  <dependencies>
+    <dependencies>
 
-    <!-- Functionality -->
-    <dependency>
-      <groupId>org.glassfish.jersey.core</groupId>
-      <artifactId>jersey-client</artifactId>
-      <version>${jersey.version}</version>
-    </dependency>
+        <!-- Functionality -->
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
 
-    <dependency>
-      <groupId>cz.jirutka.validator</groupId>
-      <artifactId>validator-collection</artifactId>
-      <version>${jirutka-validator.version}</version>
-    </dependency>
+        <dependency>
+            <groupId>cz.jirutka.validator</groupId>
+            <artifactId>validator-collection</artifactId>
+            <version>${jirutka-validator.version}</version>
+        </dependency>
 
-    <dependency>
-      <groupId>com.wordnik</groupId>
-      <artifactId>swagger-annotations</artifactId>
-      <version>${swagger.version}</version>
-    </dependency>
+        <dependency>
+            <groupId>com.wordnik</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
 
-    <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
-      <version>${validation-api.version}</version>
-    </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation-api.version}</version>
+        </dependency>
 
-    <!-- Utils -->
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>${guava.version}</version>
-    </dependency>
+        <!-- Utils -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>${commons-lang3.version}</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
 
-    <!-- Logging-related -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
+        <!-- Logging-related -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>${slf4j.version}</version>
-      <scope>test</scope>
-    </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>${apache-log4j.version}</version>
-      <scope>test</scope>
-    </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${apache-log4j.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-    <!-- Test-related -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-    
-    <dependency>
-      <groupId>javax.el</groupId>
-      <artifactId>javax.el-api</artifactId>
-      <version>${javax.el-api.version}</version>
-      <scope>test</scope>
-    </dependency>
+        <!-- Test-related -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-    <dependency>
-      <groupId>com.mediamiser</groupId>
-      <artifactId>avogadro</artifactId>
-      <version>${mediamiser-avogadro.version}</version>
-      <scope>test</scope>
-    </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>${javax.el-api.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-    <dependency>
-      <groupId>io.takari.junit</groupId>
-      <artifactId>takari-cpsuite</artifactId>
-      <version>${cpsuite.version}</version>
-      <scope>test</scope>
-    </dependency>
-    
-  </dependencies>
+        <dependency>
+            <groupId>com.mediamiser</groupId>
+            <artifactId>avogadro</artifactId>
+            <version>${mediamiser-avogadro.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-  <build>
-    <plugins>
+        <dependency>
+            <groupId>io.takari.junit</groupId>
+            <artifactId>takari-cpsuite</artifactId>
+            <version>${cpsuite.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-    <!-- Attach source to build output -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>${maven-source-plugin.version}</version>
-        <inherited>true</inherited>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>attach-test-sources</id>
-            <goals>
-              <goal>test-jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+    </dependencies>
 
-      <!-- Set source and compilation Java versions and encoding -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version>
-        <inherited>true</inherited>
-        <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-          <fork>true</fork>
-          <compilerVersion>${java.version}</compilerVersion>
-          <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-
-      <!-- Configure unit tests -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${surefire-maven-plugin.version}</version>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.surefire</groupId>
-            <artifactId>surefire-junit47</artifactId>
-            <version>${surefire-maven-plugin.version}</version>
-          </dependency>
-        </dependencies>
-        <configuration>
-          <useSystemClassLoader>false</useSystemClassLoader>
-          <runOrder>random</runOrder>
-        </configuration>
-      </plugin>
-
-      <!-- Code coverage -->
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>${jacoco-maven-plugin.version}</version>
-        <configuration>
-          <skip>${maven.test.skip}</skip>
-          <output>file</output>
-          <append>true</append>
-        </configuration>
-        <executions>
-          <execution>
-            <id>prepare-agent</id>
-            <phase>initialize</phase>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Code coverage submission to coveralls -->
-      <plugin>
-        <groupId>org.eluder.coveralls</groupId>
-        <artifactId>coveralls-maven-plugin</artifactId>
-        <version>${coveralls-maven-plugin.version}</version>
-      </plugin>
-
-      <!-- Attach dependencies within Eclipse -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <version>${maven-eclipse-plugin.version}</version>
-        <configuration>
-          <useProjectReferences>false</useProjectReferences>
-          <downloadSources>true</downloadSources>
-          <downloadJavadocs>true</downloadJavadocs>
-        </configuration>
-      </plugin>
-      
-      <!-- Javadoc compiler -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${maven-javadoc-plugin.version}</version>
-        <configuration>
-          <show>public</show>
-        </configuration>
-        <executions>
-          <execution>
-            <id>attach-javadocs-site</id>
-            <phase>pre-site</phase>
-            <goals>
-              <goal>javadoc</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>attach-javadocs-package</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Get git information -->
-      <plugin>
-        <groupId>ru.concerteza.buildnumber</groupId>
-        <artifactId>maven-jgit-buildnumber-plugin</artifactId>
-        <version>${maven-jgit-buildnumber-plugin.version}</version>
-        <executions>
-          <execution>
-            <id>git-buildnumber</id>
-            <goals>
-              <goal>extract-buildnumber</goal>
-            </goals>
-            <phase>prepare-package</phase>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Add version information to a jar's manifest -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>${maven-jar-plugin.version}</version>
-        <configuration>
-          <archive>
-            <manifest>
-              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-            </manifest>
-            <manifestEntries>
-              <X-Git-Branch>${git.branch}</X-Git-Branch>
-              <X-Git-Tag>${git.tag}</X-Git-Tag>
-              <X-Git-Commits-Count>${git.commitsCount}</X-Git-Commits-Count>
-              <X-Git-Revision>${git.revision}</X-Git-Revision>
-              <X-Build-Timestamp>${maven.build.timestamp}</X-Build-Timestamp>
-            </manifestEntries>
-          </archive>
-        </configuration>
-      </plugin>
-
-      <!-- Lint POM files -->
-      <plugin>
-        <groupId>com.lewisd</groupId>
-        <artifactId>lint-maven-plugin</artifactId>
-        <version>${lint-maven-plugin.version}</version>
-        <executions>
-          <execution>
-            <id>lint-maven</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Enforce dependency convergence -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <version>${maven-enforcer-plugin.version}</version>
-        <executions>
-          <execution>
-            <id>enforce</id>
-            <configuration>
-              <rules>
-                <requireUpperBoundDeps />
-              </rules>
-            </configuration>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-    </plugins>
-  </build>
-
-  <!-- Deploy signed artifacts to sonatype only when the `release` system property is specified (E.g. specify the flag `-Prelease` on the command line when using `mvn`) -->
-  <profiles>
-    <profile>
-    <id>profile-release</id>
-
-      <activation>
-        <property>
-          <name>release</name>
-        </property>
-      </activation>
-
-      <build>
+    <build>
         <plugins>
 
-          <!-- Deploy to sonatype -->
-          <plugin>
-            <extensions>true</extensions>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>${nexus-staging-maven-plugin.version}</version>
-            <configuration>
-              <serverId>ossrh</serverId>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>false</autoReleaseAfterClose>
-            </configuration>
-          </plugin>
+            <!-- Attach source to build output -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <inherited>true</inherited>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>attach-test-sources</id>
+                        <goals>
+                            <goal>test-jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
-          <!-- Sign build artifacts with GPG for deployment to sonatype -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>${maven-gpg-plugin.version}</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
+            <!-- Set source and compilation Java versions and encoding -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <fork>true</fork>
+                    <compilerVersion>${java.version}</compilerVersion>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- Configure unit tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire-maven-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>${surefire-maven-plugin.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                    <runOrder>random</runOrder>
+                </configuration>
+            </plugin>
+
+            <!-- Code coverage -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <configuration>
+                    <skip>${maven.test.skip}</skip>
+                    <output>file</output>
+                    <append>true</append>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Code coverage submission to coveralls -->
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>${coveralls-maven-plugin.version}</version>
+            </plugin>
+
+            <!-- Attach dependencies within Eclipse -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>${maven-eclipse-plugin.version}</version>
+                <configuration>
+                    <useProjectReferences>false</useProjectReferences>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+
+            <!-- Javadoc compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+                <configuration>
+                    <show>public</show>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs-site</id>
+                        <phase>pre-site</phase>
+                        <goals>
+                            <goal>javadoc</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>attach-javadocs-package</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Get git information -->
+            <plugin>
+                <groupId>ru.concerteza.buildnumber</groupId>
+                <artifactId>maven-jgit-buildnumber-plugin</artifactId>
+                <version>${maven-jgit-buildnumber-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>git-buildnumber</id>
+                        <goals>
+                            <goal>extract-buildnumber</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Add version information to a jar's manifest -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <X-Git-Branch>${git.branch}</X-Git-Branch>
+                            <X-Git-Tag>${git.tag}</X-Git-Tag>
+                            <X-Git-Commits-Count>${git.commitsCount}</X-Git-Commits-Count>
+                            <X-Git-Revision>${git.revision}</X-Git-Revision>
+                            <X-Build-Timestamp>${maven.build.timestamp}</X-Build-Timestamp>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- Lint POM files -->
+            <plugin>
+                <groupId>com.lewisd</groupId>
+                <artifactId>lint-maven-plugin</artifactId>
+                <version>${lint-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>lint-maven</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Enforce dependency convergence -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${maven-enforcer-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>enforce</id>
+                        <configuration>
+                            <rules>
+                                <requireUpperBoundDeps/>
+                            </rules>
+                        </configuration>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
         </plugins>
-      </build>
-    </profile>
-  </profiles>
+    </build>
 
-  <licenses>
-    <license>
-      <name>BSD 3-Clause</name>
-      <url>https://github.com/MediaMiser/pull-model/LICENSE.md</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+    <!-- Deploy signed artifacts to sonatype only when the `release` system property is specified (E.g. specify the flag `-Drelease` on the command line when using `mvn`) -->
+    <profiles>
+        <profile>
+            <id>profile-release</id>
 
-  <scm>
-    <connection>scm:git:git@github.com:MediaMiser/pull-model.git</connection>
-    <url>https://github.com/MediaMiser/pull-model</url>
-  </scm>
+            <activation>
+                <property>
+                    <name>release</name>
+                </property>
+            </activation>
 
-  <issueManagement>
-    <system>GitHub</system>
-    <url>https://github.com/MediaMiser/pull-model/issues</url>
-  </issueManagement>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
 
-  <ciManagement>
-    <system>Travis-CI</system>
-    <url>https://travis-ci.org/MediaMiser/pull-model</url>
-  </ciManagement>
+            <build>
 
-  <developers>
-    <developer>
-      <id>samer.albuhaisi</id>
-      <name>Samer Al-Buhaisi</name>
-      <email>samer.albuhaisi@mediamiser.com</email>
-    </developer>
+                <plugins>
 
-    <developer>
-      <id>chris.fournier</id>
-      <name>Chris Fournier</name>
-      <email>chris.fournier@mediamiser.com</email>
-    </developer>
-  </developers>
+                    <!-- Deploy to sonatype -->
+                    <plugin>
+                        <extensions>true</extensions>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>${nexus-staging-maven-plugin.version}</version>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
 
-  <mailingLists>
-    <mailingList>
-      <name>Team</name>
-      <post>data.services@mediamiser.com</post>
-    </mailingList>
-  </mailingLists>
+                    <!-- Sign build artifacts with GPG for deployment to sonatype -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven-gpg-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
 
-  <organization>
-    <name>MediaMiser Ltd</name>
-    <url>http://www.mediamiser.com/</url>
-  </organization>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Deploy to MediaMiser's internal repo when the `internal` system property is specified (E.g. specify the flag `-Dinternal` on the command line when using `mvn`) -->
+        <profile>
+            <id>profile-internal</id>
+
+            <activation>
+                <property>
+                    <name>internal</name>
+                </property>
+            </activation>
+
+            <properties>
+                <!-- Deployment settings -->
+                <repository-url>http://maven.mediamiser.internal:8080/repository/mercury/</repository-url>
+            </properties>
+
+            <distributionManagement>
+                <snapshotRepository>
+                    <uniqueVersion>true</uniqueVersion>
+                    <id>mercury</id>
+                    <name>Mercury repository</name>
+                    <url>${repository-url}</url>
+                    <layout>default</layout>
+                </snapshotRepository>
+            </distributionManagement>
+
+            <repositories>
+                <repository>
+                    <id>mercury</id>
+                    <url>${repository-url}</url>
+                    <layout>default</layout>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+
+        </profile>
+    </profiles>
+
+    <licenses>
+        <license>
+            <name>BSD 3-Clause</name>
+            <url>https://github.com/MediaMiser/pull-model/LICENSE.md</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:MediaMiser/pull-model.git</connection>
+        <url>https://github.com/MediaMiser/pull-model</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/MediaMiser/pull-model/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>Travis-CI</system>
+        <url>https://travis-ci.org/MediaMiser/pull-model</url>
+    </ciManagement>
+
+    <developers>
+        <developer>
+            <id>samer.albuhaisi</id>
+            <name>Samer Al-Buhaisi</name>
+            <email>samer.albuhaisi@mediamiser.com</email>
+        </developer>
+
+        <developer>
+            <id>chris.fournier</id>
+            <name>Chris Fournier</name>
+            <email>chris.fournier@mediamiser.com</email>
+        </developer>
+    </developers>
+
+    <mailingLists>
+        <mailingList>
+            <name>Team</name>
+            <post>data.services@mediamiser.com</post>
+        </mailingList>
+    </mailingLists>
+
+    <organization>
+        <name>MediaMiser Ltd</name>
+        <url>http://www.mediamiser.com/</url>
+    </organization>
 </project>
