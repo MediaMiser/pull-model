@@ -1,0 +1,22 @@
+{
+  "linters" : {
+    "text_java" : {
+      "type" : "text",
+      "include" : "(\\.(java)$)",
+      "text.max-line-length": 120
+    },
+    "text_else" : {
+      "type" : "text",
+      "exclude" : "(\\.(java)$)"
+    },
+    "spelling" : {
+      "type" : "spelling"
+    },
+    "filename" : {
+      "type" : "filename"
+    },
+    "chmod" : {
+      "type" : "chmod"
+    }
+  }
+}
