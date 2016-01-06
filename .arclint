@@ -3,6 +3,7 @@
     "text_java" : {
       "type" : "text",
       "include" : "(\\.(java)$)",
+      "exclude" : "(LocaleAdapter.java)",
       "text.max-line-length": 120
     },
     "text_else" : {

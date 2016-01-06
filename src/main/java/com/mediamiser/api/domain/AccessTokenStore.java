@@ -9,51 +9,47 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import com.wordnik.swagger.annotations.ApiModelProperty;
-
 /**
  * Represents a store containing access tokens for our thirds party providers.
- * 
+ *
  * @author Samer Al-Buhaisi <samer.albuhaisi@mediamiser.com>
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(
-		name = "")
+        name = "")
 public class AccessTokenStore extends AbstractDomain {
 
-	@Size(
-			min = 30,
-			max = 120)
-	@ApiModelProperty(
-			required = false)
-	protected String	twitterBearerToken;
+    @Size(
+            min = 30,
+            max = 120)
+    protected String twitterBearerToken;
 
-	public String twitterBearerToken() {
-		return twitterBearerToken;
-	}
+    public String twitterBearerToken() {
+        return twitterBearerToken;
+    }
 
-	public AccessTokenStore twitterBearerToken(final String twitterBearerToken) {
-		this.twitterBearerToken = twitterBearerToken;
-		return this;
-	}
+    public AccessTokenStore twitterBearerToken(final String twitterBearerToken) {
+        this.twitterBearerToken = twitterBearerToken;
+        return this;
+    }
 
-	@Override
-	public boolean equals(final Object object) {
-		boolean equals = false;
+    @Override
+    public boolean equals(final Object object) {
+        boolean equals = false;
 
-		if (this == object) {
-			equals = true;
-		} else if (object instanceof AccessTokenStore) {
-			final AccessTokenStore other = (AccessTokenStore) object;
-			equals = Objects.equals(twitterBearerToken, other.twitterBearerToken);
-		}
+        if (this == object) {
+            equals = true;
+        } else if (object instanceof AccessTokenStore) {
+            final AccessTokenStore other = (AccessTokenStore) object;
+            equals = Objects.equals(twitterBearerToken, other.twitterBearerToken);
+        }
 
-		return equals;
-	}
+        return equals;
+    }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(twitterBearerToken);
-	}
+    @Override
+    public int hashCode() {
+        return Objects.hash(twitterBearerToken);
+    }
 }
