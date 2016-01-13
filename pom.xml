@@ -4,7 +4,7 @@
 
     <groupId>com.mediamiser</groupId>
     <artifactId>pull-model</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
 
     <name>MediaMiser RESTful Pull API Models</name>
